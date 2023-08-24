@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>TPQ Al-Baidhowi</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="{{url_for('static', filename='gaya.css')}}" />
+  </head>
+  <body id="beranda">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark shadow-sm fixed-top" style="background-color: #228b22">
+      <div class="container">
+        <a class="navbar-brand" href="#">Yayasan Taajul Huffazh Al-Baidhowi</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Beranda</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/pendaftaran">Daftar</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/antrian">Antrian</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Admin </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="/dashboard">Login</a> <a href="#"></a></li>
+                <li><a class="dropdown-item" href="#">Bantuan</a></li>
+                <!-- <li><a class="dropdown-item" href="#">Something else here</a></li> -->
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Jumbotron -->
+    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="3000">
+          <img src="{{url_for('static', filename='img/image 1.jpg')}}" class="d-block w-100" alt="fotbar 1" />
+        </div>
+        <div class="carousel-item" data-bs-interval="3000">
+          <img src="{{url_for('static', filename='img/image 2.jpg')}}" class="d-block w-100" alt="fotbar 2" />
+        </div>
+        <div class="carousel-item" data-bs-interval="3000">
+          <img src="{{url_for('static', filename='img/image 4.jpg')}}" class="d-block w-100" alt="fotbar 3" />
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+    <!-- informasi -->
+    <div id="informasi" style="overflow: hidden">
+      <div class="container">
+        <div class="row text-start mt-3">
+          <div class="col">
+            <h2>Informasi</h2>
+          </div>
+          <div class="col text-center">
+            <h2>Tentang TPQ Al-Baidhowi</h2>
+          </div>
+          <div class="col text-center">
+            <h2>Santri Saat Ini</h2>
+          </div>
+        </div>
+        <div class="row justify-content-start text-start">
+          <div class="col-md-3">
+            <p>Untuk Informasi Mengenai Status Pendaftaran dan Antrian Silahkan Klik Link Dibawah</p>
+            <a href="https://www.instagram.com/dimasmr._/" class="text-dark fw-bold">Dimas Maulana Rizky</a>
+          </div>
+          <div class="col-md-6 text-center px-5">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel iusto expedita tempora, voluptate qui inventore odio aliquid rerum esse ullam deleniti hic commodi reprehenderit excepturi dignissimos eveniet deserunt quod harum
+              consequuntur molestiae alias, vero dicta? Minima id beatae eveniet aliquam eos. Dolore assumenda eaque inventore consequuntur itaque illo harum mollitia!
+            </p>
+          </div>
+          <div class="col-md-3 text text-start">
+            <div style="display: flex; justify-content: space-between; width: 100px">
+              <p>Sore</p>
+              <p>: 200</p>
+            </div>
+            <div style="display: flex; justify-content: space-between; width: 100px">
+              <p>Malam</p>
+              <p>: 500</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
