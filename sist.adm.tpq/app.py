@@ -29,12 +29,12 @@ class Pendaftaran(db.Model):
     job_ayah = db.Column(db.String(100))
     ibu = db.Column(db.String(100))
     job_ibu = db.Column(db.String(100))
-    jenis_kelamin = db.Column(db.String(100))
-    jadwal = db.Column(db.String(100))
-    no_hp = db.Column(db.String(20))
-    alamat = db.Column(db.String(100))
-    tahunan = db.Column(db.String(100))
-    spp = db.Column(db.String(100))
+    jenis_kelamin = db.Column(db.String(50))
+    jadwal = db.Column(db.String(50))
+    no_hp = db.Column(db.String(50))
+    alamat = db.Column(db.String(500))
+    tahunan = db.Column(db.String(50))
+    spp = db.Column(db.String(50))
     kartu_keluarga = db.Column(db.String(100))
 
     def __repr__(self):
@@ -58,7 +58,7 @@ def dashboard():
 
 @app.route("/antrian")
 def antri():
-    list_santri = Pendaftaran.query.all()  #ini aksesnya kemana?
+    list_santri = Pendaftaran.query.all() 
     return render_template('antrian.html', santri = list_santri)
 
 @app.route("/pendaftaran")
@@ -77,21 +77,21 @@ def pendaftaran_save():
     #menerima data dari request
     receive_nama = request.form.get('name')
     receive_ttl = request.form.get('ttl')
-    receive_dadname = request.form.get('dadkerja')
+    receive_dadname = request.form.get('dadname')
     receive_dadkerja = request.form.get('dadkerja')
     receive_momname = request.form.get('momname')
     receive_momkerja = request.form.get('momkerja')
-    receive_jenis_kelamin = request.form.get('')
+    receive_jenis_kelamin = request.form.get('jeniskelamin')
     receive_jadwal = request.form.get('jadwal')
-    receive_no_hp = request.form.get('no_hp')
+    receive_no_hp = request.form.get('nohp')
     receive_alamat = request.form.get('alamat')
     receive_tahunan = request.form.get('tahunan')
     receive_spp = request.form.get('spp')
-    receive_kartu_keluarga = request.files['kartu_keluarga']
+    receive_file = request.files['kartukeluarga']
 
-    if receive_kartu_keluarga and allowed_file(receive_kartu_keluarga.filename):
-            filename = secure_filename(receive_kartu_keluarga.filename)
-            receive_kartu_keluarga.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+    if receive_file and allowed_file(receive_file.filename):
+            filename = secure_filename(receive_file.filename)
+            receive_file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
 
             #instance / mencetak --> database
             santri = Pendaftaran()
@@ -117,7 +117,7 @@ def pendaftaran_save():
 #update data
 @app.route('/<id>/update')
 def update_status(id):
-    santri = Pendaftaran.query.get(id)
+    santri = Pendaftaran.query.filter_by(id=id).first()
     return render_template('update-status.html', santri = santri)
 
 @app.route('/<id>/update/save', methods=['POST'])
@@ -128,13 +128,13 @@ def save_update(id):
     update_dadkerja = request.form.get('dadkerja')
     update_momname = request.form.get('momname')
     update_momkerja = request.form.get('momkerja')
-    update_jenis_kelamin = request.form.get('')
+    update_jenis_kelamin = request.form.get('jeniskelamin')
     update_jadwal = request.form.get('jadwal')
-    update_no_hp = request.form.get('no_hp')
+    update_no_hp = request.form.get('nohp')
     update_alamat = request.form.get('alamat')
     update_tahunan = request.form.get('tahunan')
     update_spp = request.form.get('spp')
-    update_kartu_keluarga = request.files['kartu_keluarga']
+    update_kartu_keluarga = request.files['kartukeluarga']
 
     santri = Pendaftaran.query.filter_by(id=id).first()
 
