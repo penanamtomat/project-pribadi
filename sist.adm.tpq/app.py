@@ -23,19 +23,19 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 class Pendaftaran(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    nama = db.Column(db.String(100))
-    ttl = db.Column(db.String(100))
-    ayah = db.Column(db.String(100))
-    job_ayah = db.Column(db.String(100))
-    ibu = db.Column(db.String(100))
-    job_ibu = db.Column(db.String(100))
+    nama = db.Column(db.String(50))
+    ttl = db.Column(db.String(50))
+    ayah = db.Column(db.String(50))
+    job_ayah = db.Column(db.String(50))
+    ibu = db.Column(db.String(50))
+    job_ibu = db.Column(db.String(50))
     jenis_kelamin = db.Column(db.String(50))
     jadwal = db.Column(db.String(50))
     no_hp = db.Column(db.String(50))
-    alamat = db.Column(db.String(500))
+    alamat = db.Column(db.String(200))
     tahunan = db.Column(db.String(50))
     spp = db.Column(db.String(50))
-    kartu_keluarga = db.Column(db.String(100))
+    kartu_keluarga = db.Column(db.String(50))
 
     def __repr__(self):
         return '<Pendaftaran %r>' % self.nama

@@ -27,8 +27,15 @@
                 <th scope="col">TTL</th>
                 <th scope="col">Jenis Kelamin</th>
                 <th scope="col">Jadwal</th>
-                <th scope="col">Iuran Pembangunan</th>
-                <th scope="col">Iuran Bulanan</th>
+                <th scope="col">Tahunan</th>
+                <th scope="col">Bulanan</th>
+                <th scope="col">Ayah</th>
+                <th scope="col">Pekerjaan</th>
+                <th scope="col">Ibu</th>
+                <th scope="col">Pekerjaan</th>
+                <th scope="col">Alamat</th>
+                <th scope="col">No Hp</th>
+                <th scope="col">Kartu Keluarga</th>
                 <th></th>
               </tr>
             </thead>
@@ -42,6 +49,14 @@
                 <td>{{p.jadwal}}</td>
                 <td>{{p.tahunan}}</td>
                 <td>{{p.spp}}</td>
+                <td>{{p.ayah}}</td>
+                <td>{{p.job_ayah}}</td>
+                <td>{{p.ibu}}</td>
+                <td>{{p.job_ibu}}</td>
+                <td>{{p.alamat}}</td>
+                <td>{{p.no_hp}}</td>
+                <td><a href="/static/{{p.kartu_keluarga}}">Buka</a></td>
+                <!-- <td><img src="/static/{{p.kartu_keluarga}}" alt="" /></td> -->
                 <td>
                   <a href="/{{p.id}}/update">Edit</a>
                   <a href="/{{p.id}}/delete">Delete</a>

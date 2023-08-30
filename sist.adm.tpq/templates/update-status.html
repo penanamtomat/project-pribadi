@@ -107,14 +107,26 @@
             <div class="col mt-4 justify-content-center">
               <div class="row">
                 <label for="">Jenis Kelamin</label>
-                <div class="form-check">
+                <!-- <div class="form-check">
                   <input class="form-check-input" type="radio" name="jeniskelamin" id="flexRadioDefault3" value="{{santri.jeniskelamin}}" />
                   <label class="form-check-label" for="flexRadioDefault3"> Laki-laki </label>
                 </div>
                 <div class="form-check">
                   <input class="form-check-input" type="radio" name="jeniskelamin" id="flexRadioDefault4" value="{{santri.jeniskelamin}}" />
                   <label class="form-check-label" for="flexRadioDefault4"> Perempuan </label>
-                </div>
+                </div> -->
+                <select name="jeniskelamin" class="form-select ms-2" style="width: 275px" aria-label="Default select example" id="">
+                  <option>--Pilih--</option>
+                  {% if jenis_kelamin == "Laki-laki" %}
+                  <option value="{{santri.jenis_kelamin}}">{{santri.jenis_kelamin}}</option>
+                  <!-- {% else %}
+                  <option value="{{santri.jenis_kelamin}}" selected>Perempuan</option> -->
+                  <!-- {% endif %} {% if jenis_kelamin == "Perempuan" %} -->
+                  <!-- <option value="{{santri.jenis_kelamin}}" selected>Perempuan</option> -->
+                  {% endif %}
+                  <!-- <option value="{{santri.jenis_kelamin}}" selected>Laki-laki</option>
+                  <option value="{{santri.jenis_kelamin}}" selected>Perempuan</option> -->
+                </select>
               </div>
               <p></p>
               <h6>*Note: Jadwal Masuk Santri</h6>
@@ -123,14 +135,19 @@
               <p></p>
               <div class="row">
                 <label for="">Pilih Jadwal Masuk</label>
-                <div class="form-check">
+                <!-- <div class="form-check">
                   <input class="form-check-input" type="radio" name="jadwal" id="flexRadioDefault1" value="{{santri.jadwal}}" />
                   <label class="form-check-label" for="flexRadioDefault1"> Sore </label>
                 </div>
                 <div class="form-check">
                   <input class="form-check-input" type="radio" name="jadwal" id="flexRadioDefault2" value="{{santri.jadwal}}" />
                   <label class="form-check-label" for="flexRadioDefault2"> Malam </label>
-                </div>
+                </div> -->
+                <select name="jadwal" class="form-select ms-2" style="width: 275px" aria-label="Default select example" id="">
+                  <option selected>--Pilih--</option>
+                  <option value="{{santri.jadwal}}" selected>Sore</option>
+                  <option value="{{santri.jadwal}}" selected>Malam</option>
+                </select>
               </div>
               <p></p>
               <div class="form-group mt-4">
@@ -151,14 +168,19 @@
               Biaya masuk : <br />
               <i class="bi bi-caret-right-fill"></i> Pendaftaran : Rp. 50.000 <br />
               Pemeliharaan bangunan* : Rp. 75.000 / Rp. 100.000 <br />
-              <select name="tahunan" class="form-select" style="width: 275px" aria-label="Default select example">
+              <select name="tahunan" class="form-select" style="width: 275px" aria-label="Default select example" id="">
                 <option selected>--Pilih--</option>
                 <option value="{{santri.tahunan}}" selected>Rp. 75.000</option>
                 <option value="{{santri.tahunan}}" selected>Rp. 100.000</option>
               </select>
+              <!-- <select id="select" name="tahunan" class="form-select" style="width: 275px" aria-label="Default select example">
+                {% for option in tahunan %}
+                <option value="{{option}}">{{option}}</option>
+                {% endfor %}
+              </select> -->
               <p></p>
               SPP bulanan** : Rp. 30.000 / Rp. 50.000 <br />
-              <select name="spp" class="form-select" style="width: 275px" aria-label="Default select example">
+              <select name="spp" class="form-select" style="width: 275px" aria-label="Default select example" id="">
                 <option selected>--Pilih--</option>
                 <option value="{{santri.spp}}" selected>Rp. 30.000</option>
                 <option value="{{santri.spp}}" selected>Rp. 50.000</option>
@@ -166,7 +188,7 @@
             </div>
             <div class="col mt-3">
               <h6>Mengupload Scan Kartu Keluarga</h6>
-              <input type="file" name="kartukeluarga" id="" required="true" value="{{santri.kartukeluarga}}" />
+              <input type="file" name="kartukeluarga" id="" required="true" value="{{santri.kartu_keluarga}}" />
               <p></p>
               <h6><u>Catatan</u></h6>
               * Biaya pemeliharaan bangunan di pilih dan dibayarkan di awal pendaftaran dan selanjutnya 1x dalam 1 tahun setiap bulan Januari
