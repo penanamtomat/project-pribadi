@@ -3,16 +3,27 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from werkzeug.utils import secure_filename
 import os
+# import pymongo
+# from pymongo import MongoClient
 
 app = Flask(__name__)
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///TPQ Al-Baidhowi.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
-#instance sqlalchemy
+#objek koneksi
+# client = MongoClient("mongodb://localhost:27017/")
+
+#using database
+# db = client['tpqbaidhowi']
+
+#menggunakan koleksi
+# collection = db['pendaftaran']
+
+# instance sqlalchemy
 db = SQLAlchemy(app)
 
-#instance migrate
+# #instance migrate
 migrate = Migrate(app, db)
 
 #membuat variabel untuk menyimpan file
