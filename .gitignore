@@ -132,6 +132,7 @@ ngenewae/
 
 # static media file (upload)
 sist.adm.tpq/static/uploads/*
+web porto/image/*
 
 # Spyder project settings
 .spyderproject
