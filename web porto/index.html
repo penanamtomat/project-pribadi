@@ -172,7 +172,20 @@
 
     <!-- Footer -->
     <footer class="bg-primary text-white text-center pb-5">
-      <p>Copyright &copy; 2023 - <a href="https://www.instagram.com/dimasmr._/" class="text-white fw-bold">Dimas Maulana Rizky</a></p>
+      <!-- <p>Copyright &copy; 2023 - <a href="https://www.instagram.com/dimasmr._/" class="text-white fw-bold">Dimas Maulana Rizky</a></p> -->
+      <p>Copyright &copy; 2023 - <a href="#" onclick="auth()" class="text-white fw-bold">Dimas Maulana Rizky</a></p>
+      <script>
+        function auth() {
+          var pass = 'anjaygurinjay';
+          var pass_user = prompt('Masukkan Password: ');
+
+          if (pass_user === pass) {
+            alert('Login Berhasil');
+          } else {
+            alert('password salah');
+          }
+        }
+      </script>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
